@@ -14,7 +14,7 @@ include_once '../backend/php/login.php'
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bad Boys Computer</title>
-  <link rel="icon" type="image/png" href="../backend/img/logo.png">
+  <link rel="icon" type="image/png" href="../backend/img/favicon.ico">
   <link rel="stylesheet" type="text/css" href="../backend/css/style.css">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style type="text/css">
