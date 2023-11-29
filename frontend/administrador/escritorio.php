@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 1) {
+if (!isset($_SESSION['rol']))  {
     header('location: ../login.php');
 
 }
@@ -42,7 +42,8 @@ include("../arriba.php"); ?>
                         <div class="card">
                             <div class="card-head">
                                 <?php
-                                $sql = "SELECT SUM(total_price) total FROM orders";
+                                $fe= strval(date('d-M-Y'));
+                                $sql = "SELECT SUM(total_price) total FROM orders WHERE placed_on='$fe'";
                                 $result = $connect->query($sql); //$pdo sería el objeto conexión
                                 $total = $result->fetchColumn();
 
@@ -101,7 +102,8 @@ include("../arriba.php"); ?>
                         <div class="card">
                             <div class="card-head">
                                 <?php
-                                $sql = "SELECT SUM(total_price) total FROM orders_purchase";
+                                $fe= strval(date('d-M-Y'));
+                                $sql = "SELECT SUM(total_price) total FROM orders_purchase WHERE placed_on='$fe'";
                                 $result = $connect->query($sql); //$pdo sería el objeto conexión
                                 $total = $result->fetchColumn();
 
@@ -195,7 +197,7 @@ include("../arriba.php"); ?>
                                                 <td>
                                                     <div class="client">
                                                         <div class="client-img bg-img"
-                                                            style="background-image: url(../../backend/img/pablo.jpg)"></div>
+                                                            style="background-image: url(../../backend/img/images.jpeg)"></div>
                                                         <div class="client-info">
                                                             <h4>
                                                                 <?php echo $d->nocl ?>&nbsp;

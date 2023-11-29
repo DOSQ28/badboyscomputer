@@ -7,16 +7,57 @@
         <script type="text/javascript" src="../../backend/js/vfs_fonts.js"></script>
         <script type="text/javascript" src="../../backend/js/buttonshtml5.js"></script>
         <script type="text/javascript" src="../../backend/js/buttonsprint.js"></script>
-        <script type="text/javascript">
+        <script type="text/javascript"> 
             $(document).ready(function () {
-                $('#example').DataTable({
+                $('#example').DataTable({                    
+                    language:{ 
+                        "lengthMenu": "Mostrar _MENU_ registros",
+                        "zeroRecords": "No se Encontraron resultados",
+                        "info": "Mostrando registros del _START_ al _END_ de un total _TOTAL_ registros",
+                        "infoEmpty": "Mostrando registros del 0 al 0 de un total 0 registros",
+                        "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                        "sSearch": "Buscar:",
+                        "oPaginate":{
+                            "sFirst": "Primero",
+                            "sLast": "Ultimo",
+                            "sNext": "Siguiente",
+                            "sPrevious": "Anterior"
+                        },
+                        "sPorcessing":"Porcesando...",
+                        },                     
+                    responsive: "true",
                     dom: 'Bfrtip',
                     buttons: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
+                        {
+                            extend:  'copyHtml5',
+                            text:   "<i class='bi bi-clipboard-check-fill'>COPY</i>",
+                            titleAttr:  'Copiar al Portapapeles',
+                            className:  'btn btn-success'
+                        },
+                        {
+                            extend:  'excel',
+                            text:   "<i class='bi bi-file-earmark-excel'>Excel</i>",
+                            titleAttr:  'Exportar a Excel',
+                            className:  'btn bnt-sucess'
+                        },
+                        {
+                            extend:  'pdf',
+                            text:   "<i class='bi bi-file-earmark-pdf-fill'>PDF</i>",
+                            titleAttr:  'Exportar a PDF',
+                            className:  'btn bnt-sucess'
+                        },
+                        {
+                            extend:  'print',
+                            text:   "<i class='bi bi-printer-fill'>IMPRIMIR</i>",
+                            titleAttr:  'Imprimir',
+                            className:  'btn bnt-sucess'
+                        }
+                        // 'copy', 'csv', 'excel', 'pdf', 'print'
                     ]
                 });
             });
         </script>
+
         <script type="text/javascript">
             $(window).on("load", function () {
                 $(".load_animation").fadeOut(1000);

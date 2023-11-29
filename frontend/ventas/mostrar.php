@@ -2,7 +2,7 @@
     ob_start();
      session_start();
     
-    if(!isset($_SESSION['rol']) || $_SESSION['rol'] != 1){
+    if(!isset($_SESSION['rol'])){
     header('location: ../login.php');
 
   }
@@ -25,7 +25,7 @@
                     <div>
                         <?php 
 require '../../backend/config/Conexion.php';
-$sentencia = $connect->prepare("SELECT * FROM orders ORDER BY idord DESC;");
+$sentencia = $connect->prepare("SELECT * FROM orders ORDER BY idord DESC");
  $sentencia->execute();
 $data =  array();
 if($sentencia){
@@ -56,7 +56,7 @@ if($sentencia){
                                     <td><?php echo $d->idord ?></td>
                                     <td><h4><?php echo $d->tipc ?></h4></td>
                                     <td><h4><?php echo $d->placed_on ?></h4></td>
-                                    <td><h4>S/<?php echo number_format($d->total_price, 2); ?></h4></td>
+                                    <td><h4>Bs./<?php echo number_format($d->total_price, 2); ?></h4></td>
                                     <td>
                                         <div class="client">
                                            

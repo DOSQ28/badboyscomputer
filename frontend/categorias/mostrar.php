@@ -74,7 +74,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 1) {
                                                     </label>
                                                 </td>
 
-                                                <td>
+                                                <td class="btn-group" role="group">
                                                     <a title="Actualizar"
                                                         href="../categorias/editar.php?id=<?php echo $d->idcate ?>"
                                                         class="fa fa-pencil tooltip"></a>

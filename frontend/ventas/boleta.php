@@ -16,11 +16,11 @@ $pdf->SetFont('Arial','B',20);
 /*Cell(width , height , text , border , end line , [align] )*/
 
 $pdf->Cell(71 ,10,'',0,0);
-$pdf->Cell(59 ,1,utf8_decode('Boleta electrónica'),0,100);
+$pdf->Cell(59 ,1,utf8_decode('Boleta electrónica SISTEMAS II'),0,100);
 $pdf->Cell(59 ,10,'',0,1);
 
 $pdf->SetFont('Arial','B',15);
-$pdf->Cell(71 ,5,'Computer Advance',0,0);
+$pdf->Cell(71 ,5,'Bad Boys Computer ',0,0);
 $pdf->Cell(59 ,5,'',0,0);
 $pdf->Cell(59 ,5,'Detalles',0,1);
 
@@ -50,7 +50,7 @@ $pdf->SetFont('Arial','B',10);
 $pdf->SetXY(20, 50);
 $pdf->SetFillColor(128, 128, 128);
 $pdf->SetTextColor(255, 255, 255);
-$pdf->Cell(180,10,"Medicinas",1,0,"C",true);
+$pdf->Cell(180,10,"Productos",1,0,"C",true);
 
 
 

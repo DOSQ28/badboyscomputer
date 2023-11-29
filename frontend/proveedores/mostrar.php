@@ -69,13 +69,13 @@ if($sentencia){
                         </label>
                         </td>
                                    
-                                    <td>
+                                    <td class="btn-group" role="group">
                                        <a title="Actualizar" href="../proveedores/editar.php?id=<?php echo $d->idprov ?>" class="fa fa-pencil tooltip"></a>
                                 
                                      <form  onsubmit="return confirm('Realmente desea eliminar el registro?');" method='POST' action='<?php $_SERVER['PHP_SELF'] ?>'>
 <input type='hidden' name='idprov' value="<?php echo  $d->idprov; ?>">
 
-<button name='delete_supplier' style="cursor: pointer;" class="fa fa-trash"></button>
+<a class="fa fa-trash" name='delete_supplier' href="../proveedores/eliminar.php?id=<?php echo $d->idprov ?>" class="fa fa-pencil tooltip"></a>
 </form> 
                                     </td>
                                    

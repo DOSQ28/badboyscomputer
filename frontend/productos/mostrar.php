@@ -2,7 +2,7 @@
     ob_start();
      session_start();
     
-    if(!isset($_SESSION['rol']) || $_SESSION['rol'] != 1){
+    if(!isset($_SESSION['rol'])){
     header('location: ../login.php');
 
   }
@@ -35,7 +35,7 @@ if($sentencia){
 }
      ?>
      <?php if(count($data)>0):?>
-                        <table width="100%" id="example">
+                        <table width="100%" id="example" class="table table-hover table-success table-striped">
                             <thead>
                                 <tr>
                                     <th>Código</th>
@@ -46,7 +46,7 @@ if($sentencia){
                                     <th><span class="las la-sort"></span>Precio</th>
                                     <th><span class="las la-sort"></span>Stock</th>
                                     <th><span class="las la-sort"></span>Estado</th>
-                                 
+                                    <th><span class="las la-sort"></span>Cod Barras</th>                                 
                                     <th><span class="las la-sort"></span>Acciones</th>
                                     
                                 </tr>
@@ -69,7 +69,7 @@ if($sentencia){
                                     </td>
                                     <td><h4><?php echo $d->modelo ?></h4></td>
                                     <td><h4><?php echo $d->nocate ?></h4></td>
-                                    <td><h4>S/<?php echo number_format($d->precio,2) ?></h4></td>
+                                    <td><h4>Bs./<?php echo number_format($d->precio,2) ?></h4></td>
                                     <td>
                                       <?php 
                                      if ($d->stock < 11) {
@@ -91,8 +91,11 @@ if($sentencia){
                           <span class="slider"></span>
                         </label>
                         </td>
+                        <td>
+                          <img src="barcode.php?text=<?php echo $d->codpro ?>&size=50&orientacion=horizontal&codetype=code39&print=true&sizefactor=1" alt="" srcset="">
+                        </td>
                                    
-                                    <td>
+                                    <td  class="btn-group" role="group">
                                        <a title="Actualizar" href="../productos/editar.php?id=<?php echo $d->idprod ?>" class="fa fa-pencil tooltip"></a>
 
                                        <a title="Stock" href="../productos/stock.php?id=<?php echo $d->idprod ?>" class="fa fa-bookmark-o tooltip"></a>

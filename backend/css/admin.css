@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --main-color: #22BAA0;
-    --color-dark: #34425A;
+    --main-color: #133d36;
+    --color-dark: #345a3c;
     --text-grey: #B0B0B0;
 }
 
@@ -27,7 +27,7 @@
     bottom: 0;
     top: 0;
     z-index: 100;
-    background: var(--color-dark);
+    background: #0d3f34;
     transition: left 300ms;
 }
 
@@ -63,7 +63,7 @@
  
 /* Handle */
 .side-content::-webkit-scrollbar-thumb {
-  background: #b0b0b0; 
+  background: #853535; 
   border-radius: 10px;
 }
 
@@ -130,7 +130,7 @@
 }
 
 .side-menu a span, .side-menu a small {
-    color: #899DC1;
+    color: #0d3f34;
 }
 
 #menu-toggle:checked ~ .sidebar {
